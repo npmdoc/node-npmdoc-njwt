@@ -1,0 +1,4014 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/jwtk/njwt"
+
+    >njwt (v0.4.0)</a>
+</h1>
+<h4>JWT Library for Node.js</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt">module njwt</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt
+            <span class="apidocSignatureSpan">(claims, enforceDefaultFields)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.compact">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.compact
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.isExpired">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.isExpired
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.isNotBefore">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.isNotBefore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.isSupportedAlg">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.isSupportedAlg
+            <span class="apidocSignatureSpan">(alg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setClaim">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setClaim
+            <span class="apidocSignatureSpan">(claim, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setExpiration">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setExpiration
+            <span class="apidocSignatureSpan">(exp)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setHeader">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setHeader
+            <span class="apidocSignatureSpan">(param, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setIssuedAt">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setIssuedAt
+            <span class="apidocSignatureSpan">(iat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setIssuer">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setIssuer
+            <span class="apidocSignatureSpan">(iss)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setJti">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setJti
+            <span class="apidocSignatureSpan">(jti)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setNotBefore">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setNotBefore
+            <span class="apidocSignatureSpan">(nbf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setSigningAlgorithm">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setSigningAlgorithm
+            <span class="apidocSignatureSpan">(alg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setSigningKey">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setSigningKey
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setSubject">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setSubject
+            <span class="apidocSignatureSpan">(sub)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.sign">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.sign
+            <span class="apidocSignatureSpan">(payload, algorithm, cryptoInput)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.toString">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtBody">
+            function <span class="apidocSignatureSpan">njwt.</span>JwtBody
+            <span class="apidocSignatureSpan">(claims)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtBody.prototype.compact">
+            function <span class="apidocSignatureSpan">njwt.</span>JwtBody.prototype.compact
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtBody.prototype.toJSON">
+            function <span class="apidocSignatureSpan">njwt.</span>JwtBody.prototype.toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtHeader">
+            function <span class="apidocSignatureSpan">njwt.</span>JwtHeader
+            <span class="apidocSignatureSpan">(header)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtHeader.prototype.compact">
+            function <span class="apidocSignatureSpan">njwt.</span>JwtHeader.prototype.compact
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier">
+            function <span class="apidocSignatureSpan">njwt.</span>Verifier
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.setKeyResolver">
+            function <span class="apidocSignatureSpan">njwt.</span>Verifier.prototype.setKeyResolver
+            <span class="apidocSignatureSpan">(keyResolver)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.setSigningAlgorithm">
+            function <span class="apidocSignatureSpan">njwt.</span>Verifier.prototype.setSigningAlgorithm
+            <span class="apidocSignatureSpan">(alg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.setSigningKey">
+            function <span class="apidocSignatureSpan">njwt.</span>Verifier.prototype.setSigningKey
+            <span class="apidocSignatureSpan">(keyStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.verify">
+            function <span class="apidocSignatureSpan">njwt.</span>Verifier.prototype.verify
+            <span class="apidocSignatureSpan">(jwtString, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.withKeyResolver">
+            function <span class="apidocSignatureSpan">njwt.</span>Verifier.prototype.withKeyResolver
+            <span class="apidocSignatureSpan">(keyResolver)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.base64urlEncode">
+            function <span class="apidocSignatureSpan">njwt.</span>base64urlEncode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.base64urlUnescape">
+            function <span class="apidocSignatureSpan">njwt.</span>base64urlUnescape
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.create">
+            function <span class="apidocSignatureSpan">njwt.</span>create
+            <span class="apidocSignatureSpan">(claims, secret, alg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.createVerifier">
+            function <span class="apidocSignatureSpan">njwt.</span>createVerifier
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.verify">
+            function <span class="apidocSignatureSpan">njwt.</span>verify
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">njwt.</span>JwtBody.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">njwt.</span>JwtHeader.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">njwt.</span>Verifier.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt">module njwt.Jwt</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.Jwt">
+            function <span class="apidocSignatureSpan">njwt.</span>Jwt
+            <span class="apidocSignatureSpan">(claims, enforceDefaultFields)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype">module njwt.Jwt.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.compact">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>compact
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.isExpired">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>isExpired
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.isNotBefore">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>isNotBefore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.isSupportedAlg">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>isSupportedAlg
+            <span class="apidocSignatureSpan">(alg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setClaim">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setClaim
+            <span class="apidocSignatureSpan">(claim, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setExpiration">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setExpiration
+            <span class="apidocSignatureSpan">(exp)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setHeader">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setHeader
+            <span class="apidocSignatureSpan">(param, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setIssuedAt">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setIssuedAt
+            <span class="apidocSignatureSpan">(iat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setIssuer">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setIssuer
+            <span class="apidocSignatureSpan">(iss)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setJti">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setJti
+            <span class="apidocSignatureSpan">(jti)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setNotBefore">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setNotBefore
+            <span class="apidocSignatureSpan">(nbf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setSigningAlgorithm">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setSigningAlgorithm
+            <span class="apidocSignatureSpan">(alg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setSigningKey">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setSigningKey
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setSubject">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setSubject
+            <span class="apidocSignatureSpan">(sub)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.sign">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>sign
+            <span class="apidocSignatureSpan">(payload, algorithm, cryptoInput)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.toString">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.compact">module njwt.Jwt.prototype.compact</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.compact.compact">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>compact
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.isExpired">module njwt.Jwt.prototype.isExpired</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.isExpired.isExpired">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>isExpired
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.isNotBefore">module njwt.Jwt.prototype.isNotBefore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.isNotBefore.isNotBefore">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>isNotBefore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.isSupportedAlg">module njwt.Jwt.prototype.isSupportedAlg</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.isSupportedAlg.isSupportedAlg">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>isSupportedAlg
+            <span class="apidocSignatureSpan">(alg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.setClaim">module njwt.Jwt.prototype.setClaim</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setClaim.setClaim">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setClaim
+            <span class="apidocSignatureSpan">(claim, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.setExpiration">module njwt.Jwt.prototype.setExpiration</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setExpiration.setExpiration">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setExpiration
+            <span class="apidocSignatureSpan">(exp)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.setHeader">module njwt.Jwt.prototype.setHeader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setHeader.setHeader">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setHeader
+            <span class="apidocSignatureSpan">(param, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.setIssuedAt">module njwt.Jwt.prototype.setIssuedAt</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setIssuedAt.setIssuedAt">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setIssuedAt
+            <span class="apidocSignatureSpan">(iat)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.setIssuer">module njwt.Jwt.prototype.setIssuer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setIssuer.setIssuer">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setIssuer
+            <span class="apidocSignatureSpan">(iss)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.setJti">module njwt.Jwt.prototype.setJti</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setJti.setJti">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setJti
+            <span class="apidocSignatureSpan">(jti)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.setNotBefore">module njwt.Jwt.prototype.setNotBefore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setNotBefore.setNotBefore">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setNotBefore
+            <span class="apidocSignatureSpan">(nbf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.setSigningAlgorithm">module njwt.Jwt.prototype.setSigningAlgorithm</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setSigningAlgorithm.setSigningAlgorithm">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setSigningAlgorithm
+            <span class="apidocSignatureSpan">(alg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.setSigningKey">module njwt.Jwt.prototype.setSigningKey</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setSigningKey.setSigningKey">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setSigningKey
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.setSubject">module njwt.Jwt.prototype.setSubject</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.setSubject.setSubject">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setSubject
+            <span class="apidocSignatureSpan">(sub)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.sign">module njwt.Jwt.prototype.sign</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.sign.sign">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>sign
+            <span class="apidocSignatureSpan">(payload, algorithm, cryptoInput)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Jwt.prototype.toString">module njwt.Jwt.prototype.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Jwt.prototype.toString.toString">
+            function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.JwtBody">module njwt.JwtBody</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtBody.JwtBody">
+            function <span class="apidocSignatureSpan">njwt.</span>JwtBody
+            <span class="apidocSignatureSpan">(claims)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.JwtBody.prototype">module njwt.JwtBody.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtBody.prototype.compact">
+            function <span class="apidocSignatureSpan">njwt.JwtBody.prototype.</span>compact
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtBody.prototype.toJSON">
+            function <span class="apidocSignatureSpan">njwt.JwtBody.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.JwtBody.prototype.compact">module njwt.JwtBody.prototype.compact</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtBody.prototype.compact.compact">
+            function <span class="apidocSignatureSpan">njwt.JwtBody.prototype.</span>compact
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.JwtBody.prototype.toJSON">module njwt.JwtBody.prototype.toJSON</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtBody.prototype.toJSON.toJSON">
+            function <span class="apidocSignatureSpan">njwt.JwtBody.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.JwtHeader">module njwt.JwtHeader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtHeader.JwtHeader">
+            function <span class="apidocSignatureSpan">njwt.</span>JwtHeader
+            <span class="apidocSignatureSpan">(header)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.JwtHeader.prototype">module njwt.JwtHeader.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtHeader.prototype.compact">
+            function <span class="apidocSignatureSpan">njwt.JwtHeader.prototype.</span>compact
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">njwt.JwtHeader.prototype.</span>reservedKeys</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.JwtHeader.prototype.compact">module njwt.JwtHeader.prototype.compact</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.JwtHeader.prototype.compact.compact">
+            function <span class="apidocSignatureSpan">njwt.JwtHeader.prototype.</span>compact
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Verifier">module njwt.Verifier</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.Verifier">
+            function <span class="apidocSignatureSpan">njwt.</span>Verifier
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Verifier.prototype">module njwt.Verifier.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.isSupportedAlg">
+            function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>isSupportedAlg
+            <span class="apidocSignatureSpan">(alg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.setKeyResolver">
+            function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>setKeyResolver
+            <span class="apidocSignatureSpan">(keyResolver)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.setSigningAlgorithm">
+            function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>setSigningAlgorithm
+            <span class="apidocSignatureSpan">(alg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.setSigningKey">
+            function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>setSigningKey
+            <span class="apidocSignatureSpan">(keyStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.verify">
+            function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>verify
+            <span class="apidocSignatureSpan">(jwtString, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.withKeyResolver">
+            function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>withKeyResolver
+            <span class="apidocSignatureSpan">(keyResolver)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Verifier.prototype.setKeyResolver">module njwt.Verifier.prototype.setKeyResolver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.setKeyResolver.setKeyResolver">
+            function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>setKeyResolver
+            <span class="apidocSignatureSpan">(keyResolver)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Verifier.prototype.setSigningAlgorithm">module njwt.Verifier.prototype.setSigningAlgorithm</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.setSigningAlgorithm.setSigningAlgorithm">
+            function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>setSigningAlgorithm
+            <span class="apidocSignatureSpan">(alg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Verifier.prototype.setSigningKey">module njwt.Verifier.prototype.setSigningKey</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.setSigningKey.setSigningKey">
+            function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>setSigningKey
+            <span class="apidocSignatureSpan">(keyStr)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Verifier.prototype.verify">module njwt.Verifier.prototype.verify</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.verify.verify">
+            function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>verify
+            <span class="apidocSignatureSpan">(jwtString, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.Verifier.prototype.withKeyResolver">module njwt.Verifier.prototype.withKeyResolver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.Verifier.prototype.withKeyResolver.withKeyResolver">
+            function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>withKeyResolver
+            <span class="apidocSignatureSpan">(keyResolver)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.base64urlEncode">module njwt.base64urlEncode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.base64urlEncode.base64urlEncode">
+            function <span class="apidocSignatureSpan">njwt.</span>base64urlEncode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.base64urlUnescape">module njwt.base64urlUnescape</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.base64urlUnescape.base64urlUnescape">
+            function <span class="apidocSignatureSpan">njwt.</span>base64urlUnescape
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.create">module njwt.create</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.create.create">
+            function <span class="apidocSignatureSpan">njwt.</span>create
+            <span class="apidocSignatureSpan">(claims, secret, alg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.createVerifier">module njwt.createVerifier</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.createVerifier.createVerifier">
+            function <span class="apidocSignatureSpan">njwt.</span>createVerifier
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.njwt.verify">module njwt.verify</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.njwt.verify.verify">
+            function <span class="apidocSignatureSpan">njwt.</span>verify
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt" id="apidoc.module.njwt">module njwt</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt" id="apidoc.element.njwt.Jwt">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt
+        <span class="apidocSignatureSpan">(claims, enforceDefaultFields)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Jwt(claims, enforceDefaultFields){
+  if(!(this instanceof Jwt)){
+    return new Jwt(claims, enforceDefaultFields);
+  }
+
+  this.header = new JwtHeader();
+  this.body = new JwtBody(claims);
+
+  if (enforceDefaultFields !== false) {
+    this.setSigningAlgorithm(&#x27;none&#x27;);
+
+    if (!this.body.jti) {
+      this.setJti(uuid.v4());
+    }
+
+    if (!this.body.iat) {
+      this.setIssuedAt(nowEpochSeconds());
+    }
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.compact" id="apidoc.element.njwt.Jwt.prototype.compact">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.compact
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compact() {
+
+  var segments = [];
+  segments.push(this.header.compact());
+  segments.push(this.body.compact());
+
+  if(this.header.alg !== &#x27;none&#x27;){
+    if (this.signingKey) {
+      this.signature = this.sign(segments.join(&#x27;.&#x27;), this.header.alg, this.signingKey);
+      segments.push(this.signature);
+    }else{
+      throw new Error(properties.errors.SIGNING_KEY_REQUIRED);
+    }
+  }
+
+  return segments.join(&#x27;.&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.isExpired" id="apidoc.element.njwt.Jwt.prototype.isExpired">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.isExpired
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Jwt.prototype.isExpired = function () {
+  return new Date(this.body.exp*1000) &#x3c; new Date();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.isNotBefore" id="apidoc.element.njwt.Jwt.prototype.isNotBefore">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.isNotBefore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Jwt.prototype.isNotBefore = function () {
+  return new Date(this.body.nbf * 1000) &#x3e;= new Date();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.isSupportedAlg" id="apidoc.element.njwt.Jwt.prototype.isSupportedAlg">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.isSupportedAlg
+        <span class="apidocSignatureSpan">(alg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isSupportedAlg(alg){
+  return !!algCryptoMap[alg];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setClaim" id="apidoc.element.njwt.Jwt.prototype.setClaim">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setClaim
+        <span class="apidocSignatureSpan">(claim, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setClaim(claim, value) {
+  this.body[claim] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setExpiration" id="apidoc.element.njwt.Jwt.prototype.setExpiration">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setExpiration
+        <span class="apidocSignatureSpan">(exp)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setExpiration(exp) {
+  if(exp){
+    this.body.exp = Math.floor((exp instanceof Date ? exp : new Date(exp)).getTime() / 1000);
+  }else{
+    delete this.body.exp;
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setHeader" id="apidoc.element.njwt.Jwt.prototype.setHeader">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setHeader
+        <span class="apidocSignatureSpan">(param, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setHeader(param, value) {
+  this.header[param] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setIssuedAt" id="apidoc.element.njwt.Jwt.prototype.setIssuedAt">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setIssuedAt
+        <span class="apidocSignatureSpan">(iat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setIssuedAt(iat) {
+  this.body.iat = iat;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setIssuer" id="apidoc.element.njwt.Jwt.prototype.setIssuer">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setIssuer
+        <span class="apidocSignatureSpan">(iss)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setIssuer(iss) {
+  this.body.iss = iss;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setJti" id="apidoc.element.njwt.Jwt.prototype.setJti">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setJti
+        <span class="apidocSignatureSpan">(jti)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setJti(jti) {
+  this.body.jti = jti;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setNotBefore" id="apidoc.element.njwt.Jwt.prototype.setNotBefore">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setNotBefore
+        <span class="apidocSignatureSpan">(nbf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setNotBefore(nbf) {
+  if(nbf) {
+    this.body.nbf = Math.floor((nbf instanceof Date ? nbf : new Date(nbf)).getTime() / 1000);
+  } else {
+    delete this.body.nbf;
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setSigningAlgorithm" id="apidoc.element.njwt.Jwt.prototype.setSigningAlgorithm">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setSigningAlgorithm
+        <span class="apidocSignatureSpan">(alg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSigningAlgorithm(alg) {
+  if(!this.isSupportedAlg(alg)){
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+  this.header.alg = alg;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setSigningKey" id="apidoc.element.njwt.Jwt.prototype.setSigningKey">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setSigningKey
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSigningKey(key) {
+  this.signingKey = key;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setSubject" id="apidoc.element.njwt.Jwt.prototype.setSubject">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.setSubject
+        <span class="apidocSignatureSpan">(sub)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSubject(sub) {
+  this.body.sub = sub;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.sign" id="apidoc.element.njwt.Jwt.prototype.sign">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.sign
+        <span class="apidocSignatureSpan">(payload, algorithm, cryptoInput)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sign(payload, algorithm, cryptoInput) {
+  var buffer;
+  var signature;
+  var cryptoAlgName = algCryptoMap[algorithm];
+  var signingType = algTypeMap[algorithm];
+
+  if (!cryptoAlgName) {
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+
+  if (signingType === &#x27;hmac&#x27;) {
+    buffer = crypto.createHmac(cryptoAlgName, cryptoInput).update(payload).digest();
+  } else {
+    buffer = crypto.createSign(cryptoAlgName).update(payload).sign(cryptoInput);
+  }
+
+  if (isECDSA(algorithm)) {
+    signature = ecdsaSigFormatter.derToJose(buffer, algorithm);
+  } else {
+    signature = base64urlEncode(buffer);
+  }
+
+  return signature;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.toString" id="apidoc.element.njwt.Jwt.prototype.toString">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt.prototype.toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Jwt.prototype.toString = function (){
+  return this.compact();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtBody" id="apidoc.element.njwt.JwtBody">
+        function <span class="apidocSignatureSpan">njwt.</span>JwtBody
+        <span class="apidocSignatureSpan">(claims)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JwtBody(claims){
+  if(!(this instanceof JwtBody)){
+    return new JwtBody(claims);
+  }
+  var self = this;
+  if(claims){
+    Object.keys(claims).forEach(function(k){
+      self[k] = claims[k];
+    });
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtBody.prototype.compact" id="apidoc.element.njwt.JwtBody.prototype.compact">
+        function <span class="apidocSignatureSpan">njwt.</span>JwtBody.prototype.compact
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compact(){
+  return base64urlEncode(JSON.stringify(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtBody.prototype.toJSON" id="apidoc.element.njwt.JwtBody.prototype.toJSON">
+        function <span class="apidocSignatureSpan">njwt.</span>JwtBody.prototype.toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JwtBody.prototype.toJSON = function () {
+  var self = this;
+  return Object.keys(self).reduce(function(acc,key){
+    acc[key] = self[key];
+    return acc;
+  },{});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtHeader" id="apidoc.element.njwt.JwtHeader">
+        function <span class="apidocSignatureSpan">njwt.</span>JwtHeader
+        <span class="apidocSignatureSpan">(header)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JwtHeader(header){
+  if(!(this instanceof JwtHeader)){
+    return new JwtHeader(header);
+  }
+  var self = this;
+  this.typ = header &#x26;&#x26; header.typ || &#x27;JWT&#x27;;
+  this.alg = header &#x26;&#x26; header.alg || &#x27;HS256&#x27;;
+
+  if(header){
+    return Object.keys(header).reduce(function(acc,key){
+      if(self.reservedKeys.indexOf(key)===-1 &#x26;&#x26; header.hasOwnProperty(key)){
+        acc[key] = header[key];
+      }
+      return acc;
+    },this);
+  }else{
+    return this;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtHeader.prototype.compact" id="apidoc.element.njwt.JwtHeader.prototype.compact">
+        function <span class="apidocSignatureSpan">njwt.</span>JwtHeader.prototype.compact
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compact(){
+  return base64urlEncode(JSON.stringify(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier" id="apidoc.element.njwt.Verifier">
+        function <span class="apidocSignatureSpan">njwt.</span>Verifier
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Verifier(){
+  if(!(this instanceof Verifier)){
+    return new Verifier();
+  }
+  this.setSigningAlgorithm(&#x27;HS256&#x27;);
+  this.setKeyResolver(defaultKeyResolver.bind(this));
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.setKeyResolver" id="apidoc.element.njwt.Verifier.prototype.setKeyResolver">
+        function <span class="apidocSignatureSpan">njwt.</span>Verifier.prototype.setKeyResolver
+        <span class="apidocSignatureSpan">(keyResolver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setKeyResolver(keyResolver) {
+  this.keyResolver = keyResolver.bind(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.setSigningAlgorithm" id="apidoc.element.njwt.Verifier.prototype.setSigningAlgorithm">
+        function <span class="apidocSignatureSpan">njwt.</span>Verifier.prototype.setSigningAlgorithm
+        <span class="apidocSignatureSpan">(alg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSigningAlgorithm(alg) {
+  if(!this.isSupportedAlg(alg)){
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+  this.signingAlgorithm = alg;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.setSigningKey" id="apidoc.element.njwt.Verifier.prototype.setSigningKey">
+        function <span class="apidocSignatureSpan">njwt.</span>Verifier.prototype.setSigningKey
+        <span class="apidocSignatureSpan">(keyStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSigningKey(keyStr) {
+  this.signingKey = keyStr;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.verify" id="apidoc.element.njwt.Verifier.prototype.verify">
+        function <span class="apidocSignatureSpan">njwt.</span>Verifier.prototype.verify
+        <span class="apidocSignatureSpan">(jwtString, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function verify(jwtString, cb){
+  var jwt;
+
+  var done = handleError.bind(null,cb);
+
+  try {
+    jwt = new Parser().parse(jwtString);
+  } catch(e) {
+    return done(e);
+  }
+
+  var body = jwt.body;
+  var header = jwt.header;
+  var signature = jwt.signature;
+
+  var cryptoAlgName = algCryptoMap[header.alg];
+  var signingType = algTypeMap[header.alg];
+
+  if (header.alg !== this.signingAlgorithm) {
+    return done(new JwtParseError(properties.errors.SIGNATURE_ALGORITHM_MISMTACH,jwtString,header,body));
+  }
+
+  if (jwt.isExpired()) {
+    return done(new JwtParseError(properties.errors.EXPIRED,jwtString,header,body));
+  }
+
+  if (jwt.isNotBefore()) {
+    return done(new JwtParseError(properties.errors.NOT_ACTIVE,jwtString,header,body));
+  }
+
+  var digstInput = jwt.verificationInput;
+  var verified, digest;
+
+  return this.keyResolver(header.kid, function(err, signingKey) {
+
+    if (err) {
+      return done(new JwtParseError(util.format(properties.errors.KEY_RESOLVER_ERROR, header.kid),jwtString,header,body, err));
+    }
+
+
+    if( cryptoAlgName===&#x27;none&#x27;) {
+      verified = true;
+    } else if(signingType === &#x27;hmac&#x27;) {
+      digest = crypto.createHmac(cryptoAlgName, signingKey)
+        .update(digstInput)
+        .digest(&#x27;base64&#x27;);
+      verified = signature === digest;
+    } else {
+      var unescapedSignature;
+      var signatureType = undefined;
+
+      if (isECDSA(header.alg)) {
+        try {
+          unescapedSignature = ecdsaSigFormatter.joseToDer(signature, header.alg);
+        } catch (err) {
+          return done(new JwtParseError(properties.errors.SIGNATURE_MISMTACH,jwtString,header,body,err));
+        }
+      } else {
+        signatureType = &#x27;base64&#x27;;
+        unescapedSignature = base64urlUnescape(signature);
+      }
+
+      verified = crypto.createVerify(cryptoAlgName)
+        .update(digstInput)
+        .verify(signingKey, unescapedSignature, signatureType);
+    }
+
+    var newJwt = new Jwt(body, false);
+
+    newJwt.toString = function () {
+      return jwtString;
+    };
+
+    newJwt.header = new JwtHeader(header);
+
+    if (!verified) {
+      return done(new JwtParseError(properties.errors.SIGNATURE_MISMTACH,jwtString,header,body));
+    }
+
+    return done(null, newJwt);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.withKeyResolver" id="apidoc.element.njwt.Verifier.prototype.withKeyResolver">
+        function <span class="apidocSignatureSpan">njwt.</span>Verifier.prototype.withKeyResolver
+        <span class="apidocSignatureSpan">(keyResolver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function withKeyResolver(keyResolver) {
+  this.keyResolver = keyResolver;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.base64urlEncode" id="apidoc.element.njwt.base64urlEncode">
+        function <span class="apidocSignatureSpan">njwt.</span>base64urlEncode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function base64urlEncode(str) {
+  return new Buffer(str)
+    .toString(&#x27;base64&#x27;)
+    .replace(/\+/g, &#x27;-&#x27;)
+    .replace(/\//g, &#x27;_&#x27;)
+    .replace(/=/g, &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.base64urlUnescape" id="apidoc.element.njwt.base64urlUnescape">
+        function <span class="apidocSignatureSpan">njwt.</span>base64urlUnescape
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function base64urlUnescape(str) {
+  str += new Array(5 - str.length % 4).join(&#x27;=&#x27;);
+  return str.replace(/\-/g, &#x27;+&#x27;).replace(/_/g, &#x27;/&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.create" id="apidoc.element.njwt.create">
+        function <span class="apidocSignatureSpan">njwt.</span>create
+        <span class="apidocSignatureSpan">(claims, secret, alg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (claims, secret, alg){
+  var args = Array.prototype.slice.call(arguments);
+  var jwt;
+  if(args.length &#x3e;= 2){
+    jwt = new Jwt(claims);
+  }else if (args.length===1 &#x26;&#x26; typeof claims === &#x27;string&#x27;){
+    jwt = new Jwt({});
+    secret = claims;
+  }else{
+    jwt = new Jwt(claims);
+  }
+  if(alg!==&#x27;none&#x27; &#x26;&#x26; !secret){
+    throw new Error(properties.errors.SIGNING_KEY_REQUIRED);
+  }else{
+    jwt.setSigningAlgorithm(args.length===3 ? alg : &#x27;HS256&#x27;);
+    jwt.setSigningKey(secret);
+  }
+  jwt.setExpiration((nowEpochSeconds() + (60*60))*1000); // one hour
+  return jwt;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var claims = {
+  iss: &#x22;http://myapp.com/&#x22;,  // The URL of your service
+  sub: &#x22;users/user1234&#x22;,    // The UID of the user in your system
+  scope: &#x22;self, admins&#x22;
+}
+
+var jwt = nJwt.<span class="apidocCodeKeywordSpan">create</span>(claims,signingKey);
+
+````
+
+Once you have created the JWT, you can look at its internal structure by
+logging it to the console.  This is our internal representation of the token,
+this is not what you&#x27;ll send to your end user:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.createVerifier" id="apidoc.element.njwt.createVerifier">
+        function <span class="apidocSignatureSpan">njwt.</span>createVerifier
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createVerifier = function (){
+  return new Verifier();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+jwt.setHeader(&#x27;kid&#x27;, &#x27;kid_a&#x27;);
+```
+
+### Using a key resolver
+If your application is using multiple signing keys, nJwt provides a handy little feature that allows you to resolve which signing
+ key should be used to verify a token.
+
+To do this, you first need to manually create a verifier instance, using `nJwt.<span class="apidocCodeKeywordSpan">createVerifier
+</span>()`, and then provide your key resolution function to the `withKeyResolver()` method:
+
+```javascript
+var keyMap = {
+  kid_a: &#x27;&#x3c;secure signing key&#x3e;&#x27;,
+  kid_b: &#x27;&#x3c;secure signing key&#x3e;&#x27;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.verify" id="apidoc.element.njwt.verify">
+        function <span class="apidocSignatureSpan">njwt.</span>verify
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">verify = function (){
+
+  var args = Array.prototype.slice.call(arguments);
+  var cb = typeof args[args.length-1] === &#x27;function&#x27; ? args.pop() : null;
+
+  var verifier = new Verifier();
+
+  if(args.length===3){
+    verifier.setSigningAlgorithm(args[2]);
+    verifier.setSigningKey(args[1]);
+  }
+
+  if(args.length===2){
+    verifier.setSigningKey(args[1]);
+  }
+
+  if(args.length===1){
+    verifier.setSigningAlgorithm(&#x27;none&#x27;);
+  }
+
+  return verifier.verify(args[0], cb);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* It hasn&#x27;t been modified (e.g. some claims were maliciously added)
+* It hasn&#x27;t expired
+* It is active
+
+To verify a previously issued token, use the `verify` method.  You must give it
+the same signing key that you are using to create tokens:
+````javascript
+nJwt.<span class="apidocCodeKeywordSpan">verify</span>(token,signingKey,function(err,verifiedJwt){
+  if(err){
+    console.log(err); // Token has expired, has been tampered with, etc
+  }else{
+    console.log(verifiedJwt); // Will contain the header and body
+  }
+});
+````
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt" id="apidoc.module.njwt.Jwt">module njwt.Jwt</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.Jwt" id="apidoc.element.njwt.Jwt.Jwt">
+        function <span class="apidocSignatureSpan">njwt.</span>Jwt
+        <span class="apidocSignatureSpan">(claims, enforceDefaultFields)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Jwt(claims, enforceDefaultFields){
+  if(!(this instanceof Jwt)){
+    return new Jwt(claims, enforceDefaultFields);
+  }
+
+  this.header = new JwtHeader();
+  this.body = new JwtBody(claims);
+
+  if (enforceDefaultFields !== false) {
+    this.setSigningAlgorithm(&#x27;none&#x27;);
+
+    if (!this.body.jti) {
+      this.setJti(uuid.v4());
+    }
+
+    if (!this.body.iat) {
+      this.setIssuedAt(nowEpochSeconds());
+    }
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype" id="apidoc.module.njwt.Jwt.prototype">module njwt.Jwt.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.compact" id="apidoc.element.njwt.Jwt.prototype.compact">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>compact
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compact() {
+
+  var segments = [];
+  segments.push(this.header.compact());
+  segments.push(this.body.compact());
+
+  if(this.header.alg !== &#x27;none&#x27;){
+    if (this.signingKey) {
+      this.signature = this.sign(segments.join(&#x27;.&#x27;), this.header.alg, this.signingKey);
+      segments.push(this.signature);
+    }else{
+      throw new Error(properties.errors.SIGNING_KEY_REQUIRED);
+    }
+  }
+
+  return segments.join(&#x27;.&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+tokens that have been issued to the user.
+
+When you are ready to give the token to your end user, you need to compact it.
+This will turn it into a Base64 URL encoded string, making it safe to pass
+around in browsers without any unexpected formatting applied to it.
+
+````javascript
+var token = jwt.<span class="apidocCodeKeywordSpan">compact</span>();
+console.log(token);
+````
+````
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE0MzQ0Nzk4ODN9.HQyx15jWm1upqsrKSf89X_iP0sg7N46a9pqBVGPMYdiqZeuU_ZZOdU
+-zizHJoIHMIJxtEWzpSMaVubJW0AJsTqjqQf6GoJ4cmFAfmfUFXmMC4Xv5oc4UqvGizpoLjfZedd834PcwbS-WskZcL4pVNmBIGRtDXkoU1j2X1P5M_sNJ9lYZ5vITyqe4MYJovQzNdQziUNhcMI5wkXncV7XzGInBeQsPquASWVG4gb3Y
+--k1P3xWA4Df3rKeEQBbInDKXczvDpfIlTojx4Ch8OM8vXWWNxW-mIQrV31wRrS9XtNoig7irx8N0MzokiYKrQ8WP_ezPicHvVPIHhz-InOw
+````
+
+This is the JWT that the client application will retain, and use for authentication.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.isExpired" id="apidoc.element.njwt.Jwt.prototype.isExpired">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>isExpired
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isExpired = function () {
+  return new Date(this.body.exp*1000) &#x3c; new Date();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var cryptoAlgName = algCryptoMap[header.alg];
+var signingType = algTypeMap[header.alg];
+
+if (header.alg !== this.signingAlgorithm) {
+  return done(new JwtParseError(properties.errors.SIGNATURE_ALGORITHM_MISMTACH,jwtString,header,body));
+}
+
+if (jwt.<span class="apidocCodeKeywordSpan">isExpired</span>()) {
+  return done(new JwtParseError(properties.errors.EXPIRED,jwtString,header,body));
+}
+
+if (jwt.isNotBefore()) {
+  return done(new JwtParseError(properties.errors.NOT_ACTIVE,jwtString,header,body));
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.isNotBefore" id="apidoc.element.njwt.Jwt.prototype.isNotBefore">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>isNotBefore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNotBefore = function () {
+  return new Date(this.body.nbf * 1000) &#x3e;= new Date();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return done(new JwtParseError(properties.errors.SIGNATURE_ALGORITHM_MISMTACH,jwtString,header,body));
+}
+
+if (jwt.isExpired()) {
+  return done(new JwtParseError(properties.errors.EXPIRED,jwtString,header,body));
+}
+
+if (jwt.<span class="apidocCodeKeywordSpan">isNotBefore</span>()) {
+  return done(new JwtParseError(properties.errors.NOT_ACTIVE,jwtString,header,body));
+}
+
+var digstInput = jwt.verificationInput;
+var verified, digest;
+
+return this.keyResolver(header.kid, function(err, signingKey) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.isSupportedAlg" id="apidoc.element.njwt.Jwt.prototype.isSupportedAlg">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>isSupportedAlg
+        <span class="apidocSignatureSpan">(alg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isSupportedAlg(alg){
+  return !!algCryptoMap[alg];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return this;
+};
+Jwt.prototype.setSigningKey = function setSigningKey(key) {
+  this.signingKey = key;
+  return this;
+};
+Jwt.prototype.setSigningAlgorithm = function setSigningAlgorithm(alg) {
+  if(!this.<span class="apidocCodeKeywordSpan">isSupportedAlg</span>(alg)){
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+  this.header.alg = alg;
+  return this;
+};
+
+Jwt.prototype.sign = function sign(payload, algorithm, cryptoInput) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setClaim" id="apidoc.element.njwt.Jwt.prototype.setClaim">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setClaim
+        <span class="apidocSignatureSpan">(claim, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setClaim(claim, value) {
+  this.body[claim] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  scope: &#x27;admins&#x27;
+}
+
+var jwt = nJwt.create(claims,secret);
+
+jwt.body.scope = &#x27;admins&#x27;;
+
+jwt.<span class="apidocCodeKeywordSpan">setClaim</span>(&#x27;otherClaim&#x27;, &#x27;value&#x27;);
+
+````
+
+#### Headers
+
+You can manually modify headers object, or use the `setHeader()` method:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setExpiration" id="apidoc.element.njwt.Jwt.prototype.setExpiration">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setExpiration
+        <span class="apidocSignatureSpan">(exp)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setExpiration(exp) {
+  if(exp){
+    this.body.exp = Math.floor((exp instanceof Date ? exp : new Date(exp)).getTime() / 1000);
+  }else{
+    delete this.body.exp;
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+A convenience method is supplied for modifying the `exp` claim.  You can modify
+the `exp` claim by passing a `Date` object, or a millisecond value, to the
+`setExpiration` method:
+
+```javascript
+var jwt = nJwt.create(claims,secret);
+
+jwt.<span class="apidocCodeKeywordSpan">setExpiration</span>(new Date(&#x27;2015-07-01&#x27;)); // A specific date
+jwt.setExpiration(new Date().getTime() + (60*60*1000)); // One hour from now
+jwt.setExpiration(); // Remove the exp claim
+```
+
+#### NotBefore Claim
+
+A convenience method is supplied for modifying the `nbf` claim.  You can modify
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setHeader" id="apidoc.element.njwt.Jwt.prototype.setHeader">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setHeader
+        <span class="apidocSignatureSpan">(param, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setHeader(param, value) {
+  this.header[param] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+You can manually modify headers object, or use the `setHeader()` method:
+
+```javascript
+var jwt = nJwt.create({}, keyMap.kid_a);
+
+jwt.headers.myClaim = &#x27;foo&#x27;;
+
+jwt.<span class="apidocCodeKeywordSpan">setHeader</span>(&#x27;kid&#x27;, &#x27;kid_a&#x27;);
+```
+
+### Using a key resolver
+If your application is using multiple signing keys, nJwt provides a handy little feature that allows you to resolve which signing
+ key should be used to verify a token.
+
+To do this, you first need to manually create a verifier instance, using `nJwt.createVerifier()`, and then provide your key resolution
+ function to the `withKeyResolver()` method:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setIssuedAt" id="apidoc.element.njwt.Jwt.prototype.setIssuedAt">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setIssuedAt
+        <span class="apidocSignatureSpan">(iat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setIssuedAt(iat) {
+  this.body.iat = iat;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.setSigningAlgorithm(&#x27;none&#x27;);
+
+  if (!this.body.jti) {
+    this.setJti(uuid.v4());
+  }
+
+  if (!this.body.iat) {
+    this.<span class="apidocCodeKeywordSpan">setIssuedAt</span>(nowEpochSeconds());
+  }
+}
+
+return this;
+}
+Jwt.prototype.setClaim = function setClaim(claim, value) {
+this.body[claim] = value;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setIssuer" id="apidoc.element.njwt.Jwt.prototype.setIssuer">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setIssuer
+        <span class="apidocSignatureSpan">(iss)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setIssuer(iss) {
+  this.body.iss = iss;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setJti" id="apidoc.element.njwt.Jwt.prototype.setJti">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setJti
+        <span class="apidocSignatureSpan">(jti)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setJti(jti) {
+  this.body.jti = jti;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.header = new JwtHeader();
+this.body = new JwtBody(claims);
+
+if (enforceDefaultFields !== false) {
+  this.setSigningAlgorithm(&#x27;none&#x27;);
+
+  if (!this.body.jti) {
+    this.<span class="apidocCodeKeywordSpan">setJti</span>(uuid.v4());
+  }
+
+  if (!this.body.iat) {
+    this.setIssuedAt(nowEpochSeconds());
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setNotBefore" id="apidoc.element.njwt.Jwt.prototype.setNotBefore">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setNotBefore
+        <span class="apidocSignatureSpan">(nbf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setNotBefore(nbf) {
+  if(nbf) {
+    this.body.nbf = Math.floor((nbf instanceof Date ? nbf : new Date(nbf)).getTime() / 1000);
+  } else {
+    delete this.body.nbf;
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setSigningAlgorithm" id="apidoc.element.njwt.Jwt.prototype.setSigningAlgorithm">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setSigningAlgorithm
+        <span class="apidocSignatureSpan">(alg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSigningAlgorithm(alg) {
+  if(!this.isSupportedAlg(alg)){
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+  this.header.alg = alg;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return new Jwt(claims, enforceDefaultFields);
+  }
+
+  this.header = new JwtHeader();
+  this.body = new JwtBody(claims);
+
+  if (enforceDefaultFields !== false) {
+this.<span class="apidocCodeKeywordSpan">setSigningAlgorithm</span>(&#x27;none&#x27;);
+
+if (!this.body.jti) {
+  this.setJti(uuid.v4());
+}
+
+if (!this.body.iat) {
+  this.setIssuedAt(nowEpochSeconds());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setSigningKey" id="apidoc.element.njwt.Jwt.prototype.setSigningKey">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setSigningKey
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSigningKey(key) {
+  this.signingKey = key;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var args = Array.prototype.slice.call(arguments);
+var cb = typeof args[args.length-1] === &#x27;function&#x27; ? args.pop() : null;
+
+var verifier = new Verifier();
+
+if(args.length===3){
+  verifier.setSigningAlgorithm(args[2]);
+  verifier.<span class="apidocCodeKeywordSpan">setSigningKey</span>(args[1]);
+}
+
+if(args.length===2){
+  verifier.setSigningKey(args[1]);
+}
+
+if(args.length===1){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setSubject" id="apidoc.element.njwt.Jwt.prototype.setSubject">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setSubject
+        <span class="apidocSignatureSpan">(sub)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSubject(sub) {
+  this.body.sub = sub;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.sign" id="apidoc.element.njwt.Jwt.prototype.sign">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>sign
+        <span class="apidocSignatureSpan">(payload, algorithm, cryptoInput)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sign(payload, algorithm, cryptoInput) {
+  var buffer;
+  var signature;
+  var cryptoAlgName = algCryptoMap[algorithm];
+  var signingType = algTypeMap[algorithm];
+
+  if (!cryptoAlgName) {
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+
+  if (signingType === &#x27;hmac&#x27;) {
+    buffer = crypto.createHmac(cryptoAlgName, cryptoInput).update(payload).digest();
+  } else {
+    buffer = crypto.createSign(cryptoAlgName).update(payload).sign(cryptoInput);
+  }
+
+  if (isECDSA(algorithm)) {
+    signature = ecdsaSigFormatter.derToJose(buffer, algorithm);
+  } else {
+    signature = base64urlEncode(buffer);
+  }
+
+  return signature;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (!cryptoAlgName) {
+  throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+}
+
+if (signingType === &#x27;hmac&#x27;) {
+  buffer = crypto.createHmac(cryptoAlgName, cryptoInput).update(payload).digest();
+} else {
+  buffer = crypto.createSign(cryptoAlgName).update(payload).<span class="apidocCodeKeywordSpan">sign</span>(cryptoInput);
+}
+
+if (isECDSA(algorithm)) {
+  signature = ecdsaSigFormatter.derToJose(buffer, algorithm);
+} else {
+  signature = base64urlEncode(buffer);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.toString" id="apidoc.element.njwt.Jwt.prototype.toString">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function (){
+  return this.compact();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+to sign the token, and when the client tries to use this token for
+authentication, you will need to use the same signing key for verification.
+
+The Buffer needs to be converted to a string so that it can be persisted in a
+database, and you can do so like this:
+
+```
+var base64SigningKey = signingKey.<span class="apidocCodeKeywordSpan">toString</span>(&#x27;base64&#x27;);
+```
+
+If you are going to use multiple signing keys, it is common practice to create a
+random ID which identifies the key, and store that ID with the key in your
+database.  When you create JWTs, set the `kid` field of the header to be this ID.
+Then when verifying JWTs, this `kid` field will tell you which signing key should
+be used for verification.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.compact" id="apidoc.module.njwt.Jwt.prototype.compact">module njwt.Jwt.prototype.compact</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.compact.compact" id="apidoc.element.njwt.Jwt.prototype.compact.compact">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>compact
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compact() {
+
+  var segments = [];
+  segments.push(this.header.compact());
+  segments.push(this.body.compact());
+
+  if(this.header.alg !== &#x27;none&#x27;){
+    if (this.signingKey) {
+      this.signature = this.sign(segments.join(&#x27;.&#x27;), this.header.alg, this.signingKey);
+      segments.push(this.signature);
+    }else{
+      throw new Error(properties.errors.SIGNING_KEY_REQUIRED);
+    }
+  }
+
+  return segments.join(&#x27;.&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+tokens that have been issued to the user.
+
+When you are ready to give the token to your end user, you need to compact it.
+This will turn it into a Base64 URL encoded string, making it safe to pass
+around in browsers without any unexpected formatting applied to it.
+
+````javascript
+var token = jwt.<span class="apidocCodeKeywordSpan">compact</span>();
+console.log(token);
+````
+````
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE0MzQ0Nzk4ODN9.HQyx15jWm1upqsrKSf89X_iP0sg7N46a9pqBVGPMYdiqZeuU_ZZOdU
+-zizHJoIHMIJxtEWzpSMaVubJW0AJsTqjqQf6GoJ4cmFAfmfUFXmMC4Xv5oc4UqvGizpoLjfZedd834PcwbS-WskZcL4pVNmBIGRtDXkoU1j2X1P5M_sNJ9lYZ5vITyqe4MYJovQzNdQziUNhcMI5wkXncV7XzGInBeQsPquASWVG4gb3Y
+--k1P3xWA4Df3rKeEQBbInDKXczvDpfIlTojx4Ch8OM8vXWWNxW-mIQrV31wRrS9XtNoig7irx8N0MzokiYKrQ8WP_ezPicHvVPIHhz-InOw
+````
+
+This is the JWT that the client application will retain, and use for authentication.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.isExpired" id="apidoc.module.njwt.Jwt.prototype.isExpired">module njwt.Jwt.prototype.isExpired</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.isExpired.isExpired" id="apidoc.element.njwt.Jwt.prototype.isExpired.isExpired">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>isExpired
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isExpired = function () {
+  return new Date(this.body.exp*1000) &#x3c; new Date();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var cryptoAlgName = algCryptoMap[header.alg];
+var signingType = algTypeMap[header.alg];
+
+if (header.alg !== this.signingAlgorithm) {
+  return done(new JwtParseError(properties.errors.SIGNATURE_ALGORITHM_MISMTACH,jwtString,header,body));
+}
+
+if (jwt.<span class="apidocCodeKeywordSpan">isExpired</span>()) {
+  return done(new JwtParseError(properties.errors.EXPIRED,jwtString,header,body));
+}
+
+if (jwt.isNotBefore()) {
+  return done(new JwtParseError(properties.errors.NOT_ACTIVE,jwtString,header,body));
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.isNotBefore" id="apidoc.module.njwt.Jwt.prototype.isNotBefore">module njwt.Jwt.prototype.isNotBefore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.isNotBefore.isNotBefore" id="apidoc.element.njwt.Jwt.prototype.isNotBefore.isNotBefore">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>isNotBefore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNotBefore = function () {
+  return new Date(this.body.nbf * 1000) &#x3e;= new Date();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return done(new JwtParseError(properties.errors.SIGNATURE_ALGORITHM_MISMTACH,jwtString,header,body));
+}
+
+if (jwt.isExpired()) {
+  return done(new JwtParseError(properties.errors.EXPIRED,jwtString,header,body));
+}
+
+if (jwt.<span class="apidocCodeKeywordSpan">isNotBefore</span>()) {
+  return done(new JwtParseError(properties.errors.NOT_ACTIVE,jwtString,header,body));
+}
+
+var digstInput = jwt.verificationInput;
+var verified, digest;
+
+return this.keyResolver(header.kid, function(err, signingKey) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.isSupportedAlg" id="apidoc.module.njwt.Jwt.prototype.isSupportedAlg">module njwt.Jwt.prototype.isSupportedAlg</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.isSupportedAlg.isSupportedAlg" id="apidoc.element.njwt.Jwt.prototype.isSupportedAlg.isSupportedAlg">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>isSupportedAlg
+        <span class="apidocSignatureSpan">(alg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isSupportedAlg(alg){
+  return !!algCryptoMap[alg];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return this;
+};
+Jwt.prototype.setSigningKey = function setSigningKey(key) {
+  this.signingKey = key;
+  return this;
+};
+Jwt.prototype.setSigningAlgorithm = function setSigningAlgorithm(alg) {
+  if(!this.<span class="apidocCodeKeywordSpan">isSupportedAlg</span>(alg)){
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+  this.header.alg = alg;
+  return this;
+};
+
+Jwt.prototype.sign = function sign(payload, algorithm, cryptoInput) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.setClaim" id="apidoc.module.njwt.Jwt.prototype.setClaim">module njwt.Jwt.prototype.setClaim</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setClaim.setClaim" id="apidoc.element.njwt.Jwt.prototype.setClaim.setClaim">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setClaim
+        <span class="apidocSignatureSpan">(claim, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setClaim(claim, value) {
+  this.body[claim] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  scope: &#x27;admins&#x27;
+}
+
+var jwt = nJwt.create(claims,secret);
+
+jwt.body.scope = &#x27;admins&#x27;;
+
+jwt.<span class="apidocCodeKeywordSpan">setClaim</span>(&#x27;otherClaim&#x27;, &#x27;value&#x27;);
+
+````
+
+#### Headers
+
+You can manually modify headers object, or use the `setHeader()` method:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.setExpiration" id="apidoc.module.njwt.Jwt.prototype.setExpiration">module njwt.Jwt.prototype.setExpiration</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setExpiration.setExpiration" id="apidoc.element.njwt.Jwt.prototype.setExpiration.setExpiration">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setExpiration
+        <span class="apidocSignatureSpan">(exp)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setExpiration(exp) {
+  if(exp){
+    this.body.exp = Math.floor((exp instanceof Date ? exp : new Date(exp)).getTime() / 1000);
+  }else{
+    delete this.body.exp;
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+A convenience method is supplied for modifying the `exp` claim.  You can modify
+the `exp` claim by passing a `Date` object, or a millisecond value, to the
+`setExpiration` method:
+
+```javascript
+var jwt = nJwt.create(claims,secret);
+
+jwt.<span class="apidocCodeKeywordSpan">setExpiration</span>(new Date(&#x27;2015-07-01&#x27;)); // A specific date
+jwt.setExpiration(new Date().getTime() + (60*60*1000)); // One hour from now
+jwt.setExpiration(); // Remove the exp claim
+```
+
+#### NotBefore Claim
+
+A convenience method is supplied for modifying the `nbf` claim.  You can modify
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.setHeader" id="apidoc.module.njwt.Jwt.prototype.setHeader">module njwt.Jwt.prototype.setHeader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setHeader.setHeader" id="apidoc.element.njwt.Jwt.prototype.setHeader.setHeader">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setHeader
+        <span class="apidocSignatureSpan">(param, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setHeader(param, value) {
+  this.header[param] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+You can manually modify headers object, or use the `setHeader()` method:
+
+```javascript
+var jwt = nJwt.create({}, keyMap.kid_a);
+
+jwt.headers.myClaim = &#x27;foo&#x27;;
+
+jwt.<span class="apidocCodeKeywordSpan">setHeader</span>(&#x27;kid&#x27;, &#x27;kid_a&#x27;);
+```
+
+### Using a key resolver
+If your application is using multiple signing keys, nJwt provides a handy little feature that allows you to resolve which signing
+ key should be used to verify a token.
+
+To do this, you first need to manually create a verifier instance, using `nJwt.createVerifier()`, and then provide your key resolution
+ function to the `withKeyResolver()` method:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.setIssuedAt" id="apidoc.module.njwt.Jwt.prototype.setIssuedAt">module njwt.Jwt.prototype.setIssuedAt</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setIssuedAt.setIssuedAt" id="apidoc.element.njwt.Jwt.prototype.setIssuedAt.setIssuedAt">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setIssuedAt
+        <span class="apidocSignatureSpan">(iat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setIssuedAt(iat) {
+  this.body.iat = iat;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.setSigningAlgorithm(&#x27;none&#x27;);
+
+  if (!this.body.jti) {
+    this.setJti(uuid.v4());
+  }
+
+  if (!this.body.iat) {
+    this.<span class="apidocCodeKeywordSpan">setIssuedAt</span>(nowEpochSeconds());
+  }
+}
+
+return this;
+}
+Jwt.prototype.setClaim = function setClaim(claim, value) {
+this.body[claim] = value;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.setIssuer" id="apidoc.module.njwt.Jwt.prototype.setIssuer">module njwt.Jwt.prototype.setIssuer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setIssuer.setIssuer" id="apidoc.element.njwt.Jwt.prototype.setIssuer.setIssuer">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setIssuer
+        <span class="apidocSignatureSpan">(iss)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setIssuer(iss) {
+  this.body.iss = iss;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.setJti" id="apidoc.module.njwt.Jwt.prototype.setJti">module njwt.Jwt.prototype.setJti</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setJti.setJti" id="apidoc.element.njwt.Jwt.prototype.setJti.setJti">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setJti
+        <span class="apidocSignatureSpan">(jti)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setJti(jti) {
+  this.body.jti = jti;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.header = new JwtHeader();
+this.body = new JwtBody(claims);
+
+if (enforceDefaultFields !== false) {
+  this.setSigningAlgorithm(&#x27;none&#x27;);
+
+  if (!this.body.jti) {
+    this.<span class="apidocCodeKeywordSpan">setJti</span>(uuid.v4());
+  }
+
+  if (!this.body.iat) {
+    this.setIssuedAt(nowEpochSeconds());
+  }
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.setNotBefore" id="apidoc.module.njwt.Jwt.prototype.setNotBefore">module njwt.Jwt.prototype.setNotBefore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setNotBefore.setNotBefore" id="apidoc.element.njwt.Jwt.prototype.setNotBefore.setNotBefore">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setNotBefore
+        <span class="apidocSignatureSpan">(nbf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setNotBefore(nbf) {
+  if(nbf) {
+    this.body.nbf = Math.floor((nbf instanceof Date ? nbf : new Date(nbf)).getTime() / 1000);
+  } else {
+    delete this.body.nbf;
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.setSigningAlgorithm" id="apidoc.module.njwt.Jwt.prototype.setSigningAlgorithm">module njwt.Jwt.prototype.setSigningAlgorithm</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setSigningAlgorithm.setSigningAlgorithm" id="apidoc.element.njwt.Jwt.prototype.setSigningAlgorithm.setSigningAlgorithm">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setSigningAlgorithm
+        <span class="apidocSignatureSpan">(alg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSigningAlgorithm(alg) {
+  if(!this.isSupportedAlg(alg)){
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+  this.header.alg = alg;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return new Jwt(claims, enforceDefaultFields);
+  }
+
+  this.header = new JwtHeader();
+  this.body = new JwtBody(claims);
+
+  if (enforceDefaultFields !== false) {
+this.<span class="apidocCodeKeywordSpan">setSigningAlgorithm</span>(&#x27;none&#x27;);
+
+if (!this.body.jti) {
+  this.setJti(uuid.v4());
+}
+
+if (!this.body.iat) {
+  this.setIssuedAt(nowEpochSeconds());
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.setSigningKey" id="apidoc.module.njwt.Jwt.prototype.setSigningKey">module njwt.Jwt.prototype.setSigningKey</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setSigningKey.setSigningKey" id="apidoc.element.njwt.Jwt.prototype.setSigningKey.setSigningKey">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setSigningKey
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSigningKey(key) {
+  this.signingKey = key;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var args = Array.prototype.slice.call(arguments);
+var cb = typeof args[args.length-1] === &#x27;function&#x27; ? args.pop() : null;
+
+var verifier = new Verifier();
+
+if(args.length===3){
+  verifier.setSigningAlgorithm(args[2]);
+  verifier.<span class="apidocCodeKeywordSpan">setSigningKey</span>(args[1]);
+}
+
+if(args.length===2){
+  verifier.setSigningKey(args[1]);
+}
+
+if(args.length===1){
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.setSubject" id="apidoc.module.njwt.Jwt.prototype.setSubject">module njwt.Jwt.prototype.setSubject</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.setSubject.setSubject" id="apidoc.element.njwt.Jwt.prototype.setSubject.setSubject">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>setSubject
+        <span class="apidocSignatureSpan">(sub)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSubject(sub) {
+  this.body.sub = sub;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.sign" id="apidoc.module.njwt.Jwt.prototype.sign">module njwt.Jwt.prototype.sign</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.sign.sign" id="apidoc.element.njwt.Jwt.prototype.sign.sign">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>sign
+        <span class="apidocSignatureSpan">(payload, algorithm, cryptoInput)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sign(payload, algorithm, cryptoInput) {
+  var buffer;
+  var signature;
+  var cryptoAlgName = algCryptoMap[algorithm];
+  var signingType = algTypeMap[algorithm];
+
+  if (!cryptoAlgName) {
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+
+  if (signingType === &#x27;hmac&#x27;) {
+    buffer = crypto.createHmac(cryptoAlgName, cryptoInput).update(payload).digest();
+  } else {
+    buffer = crypto.createSign(cryptoAlgName).update(payload).sign(cryptoInput);
+  }
+
+  if (isECDSA(algorithm)) {
+    signature = ecdsaSigFormatter.derToJose(buffer, algorithm);
+  } else {
+    signature = base64urlEncode(buffer);
+  }
+
+  return signature;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (!cryptoAlgName) {
+  throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+}
+
+if (signingType === &#x27;hmac&#x27;) {
+  buffer = crypto.createHmac(cryptoAlgName, cryptoInput).update(payload).digest();
+} else {
+  buffer = crypto.createSign(cryptoAlgName).update(payload).<span class="apidocCodeKeywordSpan">sign</span>(cryptoInput);
+}
+
+if (isECDSA(algorithm)) {
+  signature = ecdsaSigFormatter.derToJose(buffer, algorithm);
+} else {
+  signature = base64urlEncode(buffer);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Jwt.prototype.toString" id="apidoc.module.njwt.Jwt.prototype.toString">module njwt.Jwt.prototype.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Jwt.prototype.toString.toString" id="apidoc.element.njwt.Jwt.prototype.toString.toString">
+        function <span class="apidocSignatureSpan">njwt.Jwt.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+to sign the token, and when the client tries to use this token for
+authentication, you will need to use the same signing key for verification.
+
+The Buffer needs to be converted to a string so that it can be persisted in a
+database, and you can do so like this:
+
+```
+var base64SigningKey = signingKey.<span class="apidocCodeKeywordSpan">toString</span>(&#x27;base64&#x27;);
+```
+
+If you are going to use multiple signing keys, it is common practice to create a
+random ID which identifies the key, and store that ID with the key in your
+database.  When you create JWTs, set the `kid` field of the header to be this ID.
+Then when verifying JWTs, this `kid` field will tell you which signing key should
+be used for verification.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.JwtBody" id="apidoc.module.njwt.JwtBody">module njwt.JwtBody</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtBody.JwtBody" id="apidoc.element.njwt.JwtBody.JwtBody">
+        function <span class="apidocSignatureSpan">njwt.</span>JwtBody
+        <span class="apidocSignatureSpan">(claims)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JwtBody(claims){
+  if(!(this instanceof JwtBody)){
+    return new JwtBody(claims);
+  }
+  var self = this;
+  if(claims){
+    Object.keys(claims).forEach(function(k){
+      self[k] = claims[k];
+    });
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.JwtBody.prototype" id="apidoc.module.njwt.JwtBody.prototype">module njwt.JwtBody.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtBody.prototype.compact" id="apidoc.element.njwt.JwtBody.prototype.compact">
+        function <span class="apidocSignatureSpan">njwt.JwtBody.prototype.</span>compact
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compact(){
+  return base64urlEncode(JSON.stringify(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+tokens that have been issued to the user.
+
+When you are ready to give the token to your end user, you need to compact it.
+This will turn it into a Base64 URL encoded string, making it safe to pass
+around in browsers without any unexpected formatting applied to it.
+
+````javascript
+var token = jwt.<span class="apidocCodeKeywordSpan">compact</span>();
+console.log(token);
+````
+````
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE0MzQ0Nzk4ODN9.HQyx15jWm1upqsrKSf89X_iP0sg7N46a9pqBVGPMYdiqZeuU_ZZOdU
+-zizHJoIHMIJxtEWzpSMaVubJW0AJsTqjqQf6GoJ4cmFAfmfUFXmMC4Xv5oc4UqvGizpoLjfZedd834PcwbS-WskZcL4pVNmBIGRtDXkoU1j2X1P5M_sNJ9lYZ5vITyqe4MYJovQzNdQziUNhcMI5wkXncV7XzGInBeQsPquASWVG4gb3Y
+--k1P3xWA4Df3rKeEQBbInDKXczvDpfIlTojx4Ch8OM8vXWWNxW-mIQrV31wRrS9XtNoig7irx8N0MzokiYKrQ8WP_ezPicHvVPIHhz-InOw
+````
+
+This is the JWT that the client application will retain, and use for authentication.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtBody.prototype.toJSON" id="apidoc.element.njwt.JwtBody.prototype.toJSON">
+        function <span class="apidocSignatureSpan">njwt.JwtBody.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+  var self = this;
+  return Object.keys(self).reduce(function(acc,key){
+    acc[key] = self[key];
+    return acc;
+  },{});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.JwtBody.prototype.compact" id="apidoc.module.njwt.JwtBody.prototype.compact">module njwt.JwtBody.prototype.compact</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtBody.prototype.compact.compact" id="apidoc.element.njwt.JwtBody.prototype.compact.compact">
+        function <span class="apidocSignatureSpan">njwt.JwtBody.prototype.</span>compact
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compact(){
+  return base64urlEncode(JSON.stringify(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+tokens that have been issued to the user.
+
+When you are ready to give the token to your end user, you need to compact it.
+This will turn it into a Base64 URL encoded string, making it safe to pass
+around in browsers without any unexpected formatting applied to it.
+
+````javascript
+var token = jwt.<span class="apidocCodeKeywordSpan">compact</span>();
+console.log(token);
+````
+````
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE0MzQ0Nzk4ODN9.HQyx15jWm1upqsrKSf89X_iP0sg7N46a9pqBVGPMYdiqZeuU_ZZOdU
+-zizHJoIHMIJxtEWzpSMaVubJW0AJsTqjqQf6GoJ4cmFAfmfUFXmMC4Xv5oc4UqvGizpoLjfZedd834PcwbS-WskZcL4pVNmBIGRtDXkoU1j2X1P5M_sNJ9lYZ5vITyqe4MYJovQzNdQziUNhcMI5wkXncV7XzGInBeQsPquASWVG4gb3Y
+--k1P3xWA4Df3rKeEQBbInDKXczvDpfIlTojx4Ch8OM8vXWWNxW-mIQrV31wRrS9XtNoig7irx8N0MzokiYKrQ8WP_ezPicHvVPIHhz-InOw
+````
+
+This is the JWT that the client application will retain, and use for authentication.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.JwtBody.prototype.toJSON" id="apidoc.module.njwt.JwtBody.prototype.toJSON">module njwt.JwtBody.prototype.toJSON</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtBody.prototype.toJSON.toJSON" id="apidoc.element.njwt.JwtBody.prototype.toJSON.toJSON">
+        function <span class="apidocSignatureSpan">njwt.JwtBody.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+  var self = this;
+  return Object.keys(self).reduce(function(acc,key){
+    acc[key] = self[key];
+    return acc;
+  },{});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.JwtHeader" id="apidoc.module.njwt.JwtHeader">module njwt.JwtHeader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtHeader.JwtHeader" id="apidoc.element.njwt.JwtHeader.JwtHeader">
+        function <span class="apidocSignatureSpan">njwt.</span>JwtHeader
+        <span class="apidocSignatureSpan">(header)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JwtHeader(header){
+  if(!(this instanceof JwtHeader)){
+    return new JwtHeader(header);
+  }
+  var self = this;
+  this.typ = header &#x26;&#x26; header.typ || &#x27;JWT&#x27;;
+  this.alg = header &#x26;&#x26; header.alg || &#x27;HS256&#x27;;
+
+  if(header){
+    return Object.keys(header).reduce(function(acc,key){
+      if(self.reservedKeys.indexOf(key)===-1 &#x26;&#x26; header.hasOwnProperty(key)){
+        acc[key] = header[key];
+      }
+      return acc;
+    },this);
+  }else{
+    return this;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.JwtHeader.prototype" id="apidoc.module.njwt.JwtHeader.prototype">module njwt.JwtHeader.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtHeader.prototype.compact" id="apidoc.element.njwt.JwtHeader.prototype.compact">
+        function <span class="apidocSignatureSpan">njwt.JwtHeader.prototype.</span>compact
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compact(){
+  return base64urlEncode(JSON.stringify(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+tokens that have been issued to the user.
+
+When you are ready to give the token to your end user, you need to compact it.
+This will turn it into a Base64 URL encoded string, making it safe to pass
+around in browsers without any unexpected formatting applied to it.
+
+````javascript
+var token = jwt.<span class="apidocCodeKeywordSpan">compact</span>();
+console.log(token);
+````
+````
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE0MzQ0Nzk4ODN9.HQyx15jWm1upqsrKSf89X_iP0sg7N46a9pqBVGPMYdiqZeuU_ZZOdU
+-zizHJoIHMIJxtEWzpSMaVubJW0AJsTqjqQf6GoJ4cmFAfmfUFXmMC4Xv5oc4UqvGizpoLjfZedd834PcwbS-WskZcL4pVNmBIGRtDXkoU1j2X1P5M_sNJ9lYZ5vITyqe4MYJovQzNdQziUNhcMI5wkXncV7XzGInBeQsPquASWVG4gb3Y
+--k1P3xWA4Df3rKeEQBbInDKXczvDpfIlTojx4Ch8OM8vXWWNxW-mIQrV31wRrS9XtNoig7irx8N0MzokiYKrQ8WP_ezPicHvVPIHhz-InOw
+````
+
+This is the JWT that the client application will retain, and use for authentication.
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.JwtHeader.prototype.compact" id="apidoc.module.njwt.JwtHeader.prototype.compact">module njwt.JwtHeader.prototype.compact</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.JwtHeader.prototype.compact.compact" id="apidoc.element.njwt.JwtHeader.prototype.compact.compact">
+        function <span class="apidocSignatureSpan">njwt.JwtHeader.prototype.</span>compact
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compact(){
+  return base64urlEncode(JSON.stringify(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+tokens that have been issued to the user.
+
+When you are ready to give the token to your end user, you need to compact it.
+This will turn it into a Base64 URL encoded string, making it safe to pass
+around in browsers without any unexpected formatting applied to it.
+
+````javascript
+var token = jwt.<span class="apidocCodeKeywordSpan">compact</span>();
+console.log(token);
+````
+````
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE0MzQ0Nzk4ODN9.HQyx15jWm1upqsrKSf89X_iP0sg7N46a9pqBVGPMYdiqZeuU_ZZOdU
+-zizHJoIHMIJxtEWzpSMaVubJW0AJsTqjqQf6GoJ4cmFAfmfUFXmMC4Xv5oc4UqvGizpoLjfZedd834PcwbS-WskZcL4pVNmBIGRtDXkoU1j2X1P5M_sNJ9lYZ5vITyqe4MYJovQzNdQziUNhcMI5wkXncV7XzGInBeQsPquASWVG4gb3Y
+--k1P3xWA4Df3rKeEQBbInDKXczvDpfIlTojx4Ch8OM8vXWWNxW-mIQrV31wRrS9XtNoig7irx8N0MzokiYKrQ8WP_ezPicHvVPIHhz-InOw
+````
+
+This is the JWT that the client application will retain, and use for authentication.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Verifier" id="apidoc.module.njwt.Verifier">module njwt.Verifier</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.Verifier" id="apidoc.element.njwt.Verifier.Verifier">
+        function <span class="apidocSignatureSpan">njwt.</span>Verifier
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Verifier(){
+  if(!(this instanceof Verifier)){
+    return new Verifier();
+  }
+  this.setSigningAlgorithm(&#x27;HS256&#x27;);
+  this.setKeyResolver(defaultKeyResolver.bind(this));
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Verifier.prototype" id="apidoc.module.njwt.Verifier.prototype">module njwt.Verifier.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.isSupportedAlg" id="apidoc.element.njwt.Verifier.prototype.isSupportedAlg">
+        function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>isSupportedAlg
+        <span class="apidocSignatureSpan">(alg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isSupportedAlg(alg){
+  return !!algCryptoMap[alg];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return this;
+};
+Jwt.prototype.setSigningKey = function setSigningKey(key) {
+  this.signingKey = key;
+  return this;
+};
+Jwt.prototype.setSigningAlgorithm = function setSigningAlgorithm(alg) {
+  if(!this.<span class="apidocCodeKeywordSpan">isSupportedAlg</span>(alg)){
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+  this.header.alg = alg;
+  return this;
+};
+
+Jwt.prototype.sign = function sign(payload, algorithm, cryptoInput) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.setKeyResolver" id="apidoc.element.njwt.Verifier.prototype.setKeyResolver">
+        function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>setKeyResolver
+        <span class="apidocSignatureSpan">(keyResolver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setKeyResolver(keyResolver) {
+  this.keyResolver = keyResolver.bind(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+function Verifier(){
+if(!(this instanceof Verifier)){
+  return new Verifier();
+}
+this.setSigningAlgorithm(&#x27;HS256&#x27;);
+this.<span class="apidocCodeKeywordSpan">setKeyResolver</span>(defaultKeyResolver.bind(this));
+return this;
+}
+Verifier.prototype.setSigningAlgorithm = function setSigningAlgorithm(alg) {
+if(!this.isSupportedAlg(alg)){
+  throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+}
+this.signingAlgorithm = alg;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.setSigningAlgorithm" id="apidoc.element.njwt.Verifier.prototype.setSigningAlgorithm">
+        function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>setSigningAlgorithm
+        <span class="apidocSignatureSpan">(alg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSigningAlgorithm(alg) {
+  if(!this.isSupportedAlg(alg)){
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+  this.signingAlgorithm = alg;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return new Jwt(claims, enforceDefaultFields);
+  }
+
+  this.header = new JwtHeader();
+  this.body = new JwtBody(claims);
+
+  if (enforceDefaultFields !== false) {
+this.<span class="apidocCodeKeywordSpan">setSigningAlgorithm</span>(&#x27;none&#x27;);
+
+if (!this.body.jti) {
+  this.setJti(uuid.v4());
+}
+
+if (!this.body.iat) {
+  this.setIssuedAt(nowEpochSeconds());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.setSigningKey" id="apidoc.element.njwt.Verifier.prototype.setSigningKey">
+        function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>setSigningKey
+        <span class="apidocSignatureSpan">(keyStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSigningKey(keyStr) {
+  this.signingKey = keyStr;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var args = Array.prototype.slice.call(arguments);
+var cb = typeof args[args.length-1] === &#x27;function&#x27; ? args.pop() : null;
+
+var verifier = new Verifier();
+
+if(args.length===3){
+  verifier.setSigningAlgorithm(args[2]);
+  verifier.<span class="apidocCodeKeywordSpan">setSigningKey</span>(args[1]);
+}
+
+if(args.length===2){
+  verifier.setSigningKey(args[1]);
+}
+
+if(args.length===1){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.verify" id="apidoc.element.njwt.Verifier.prototype.verify">
+        function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>verify
+        <span class="apidocSignatureSpan">(jwtString, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function verify(jwtString, cb){
+  var jwt;
+
+  var done = handleError.bind(null,cb);
+
+  try {
+    jwt = new Parser().parse(jwtString);
+  } catch(e) {
+    return done(e);
+  }
+
+  var body = jwt.body;
+  var header = jwt.header;
+  var signature = jwt.signature;
+
+  var cryptoAlgName = algCryptoMap[header.alg];
+  var signingType = algTypeMap[header.alg];
+
+  if (header.alg !== this.signingAlgorithm) {
+    return done(new JwtParseError(properties.errors.SIGNATURE_ALGORITHM_MISMTACH,jwtString,header,body));
+  }
+
+  if (jwt.isExpired()) {
+    return done(new JwtParseError(properties.errors.EXPIRED,jwtString,header,body));
+  }
+
+  if (jwt.isNotBefore()) {
+    return done(new JwtParseError(properties.errors.NOT_ACTIVE,jwtString,header,body));
+  }
+
+  var digstInput = jwt.verificationInput;
+  var verified, digest;
+
+  return this.keyResolver(header.kid, function(err, signingKey) {
+
+    if (err) {
+      return done(new JwtParseError(util.format(properties.errors.KEY_RESOLVER_ERROR, header.kid),jwtString,header,body, err));
+    }
+
+
+    if( cryptoAlgName===&#x27;none&#x27;) {
+      verified = true;
+    } else if(signingType === &#x27;hmac&#x27;) {
+      digest = crypto.createHmac(cryptoAlgName, signingKey)
+        .update(digstInput)
+        .digest(&#x27;base64&#x27;);
+      verified = signature === digest;
+    } else {
+      var unescapedSignature;
+      var signatureType = undefined;
+
+      if (isECDSA(header.alg)) {
+        try {
+          unescapedSignature = ecdsaSigFormatter.joseToDer(signature, header.alg);
+        } catch (err) {
+          return done(new JwtParseError(properties.errors.SIGNATURE_MISMTACH,jwtString,header,body,err));
+        }
+      } else {
+        signatureType = &#x27;base64&#x27;;
+        unescapedSignature = base64urlUnescape(signature);
+      }
+
+      verified = crypto.createVerify(cryptoAlgName)
+        .update(digstInput)
+        .verify(signingKey, unescapedSignature, signatureType);
+    }
+
+    var newJwt = new Jwt(body, false);
+
+    newJwt.toString = function () {
+      return jwtString;
+    };
+
+    newJwt.header = new JwtHeader(header);
+
+    if (!verified) {
+      return done(new JwtParseError(properties.errors.SIGNATURE_MISMTACH,jwtString,header,body));
+    }
+
+    return done(null, newJwt);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* It hasn&#x27;t been modified (e.g. some claims were maliciously added)
+* It hasn&#x27;t expired
+* It is active
+
+To verify a previously issued token, use the `verify` method.  You must give it
+the same signing key that you are using to create tokens:
+````javascript
+nJwt.<span class="apidocCodeKeywordSpan">verify</span>(token,signingKey,function(err,verifiedJwt){
+  if(err){
+    console.log(err); // Token has expired, has been tampered with, etc
+  }else{
+    console.log(verifiedJwt); // Will contain the header and body
+  }
+});
+````
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.withKeyResolver" id="apidoc.element.njwt.Verifier.prototype.withKeyResolver">
+        function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>withKeyResolver
+        <span class="apidocSignatureSpan">(keyResolver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function withKeyResolver(keyResolver) {
+  this.keyResolver = keyResolver;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+cb(new Error(&#x27;Unknown kid&#x27;));
+}
+
+var tokenA = nJwt.create({}, keyMap.kid_a).setHeader(&#x27;kid&#x27;, &#x27;kid_a&#x27;).compact();
+
+var tokenB = nJwt.create({}, &#x27;foo&#x27;).setHeader(&#x27;kid&#x27;, &#x27;bar&#x27;).compact();
+
+var verifier = nJwt.createVerifier().<span class="apidocCodeKeywordSpan">withKeyResolver</span>(myKeyResolver);
+
+// synchronously
+
+try {
+
+// This will pass and print the result
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Verifier.prototype.setKeyResolver" id="apidoc.module.njwt.Verifier.prototype.setKeyResolver">module njwt.Verifier.prototype.setKeyResolver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.setKeyResolver.setKeyResolver" id="apidoc.element.njwt.Verifier.prototype.setKeyResolver.setKeyResolver">
+        function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>setKeyResolver
+        <span class="apidocSignatureSpan">(keyResolver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setKeyResolver(keyResolver) {
+  this.keyResolver = keyResolver.bind(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+function Verifier(){
+if(!(this instanceof Verifier)){
+  return new Verifier();
+}
+this.setSigningAlgorithm(&#x27;HS256&#x27;);
+this.<span class="apidocCodeKeywordSpan">setKeyResolver</span>(defaultKeyResolver.bind(this));
+return this;
+}
+Verifier.prototype.setSigningAlgorithm = function setSigningAlgorithm(alg) {
+if(!this.isSupportedAlg(alg)){
+  throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+}
+this.signingAlgorithm = alg;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Verifier.prototype.setSigningAlgorithm" id="apidoc.module.njwt.Verifier.prototype.setSigningAlgorithm">module njwt.Verifier.prototype.setSigningAlgorithm</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.setSigningAlgorithm.setSigningAlgorithm" id="apidoc.element.njwt.Verifier.prototype.setSigningAlgorithm.setSigningAlgorithm">
+        function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>setSigningAlgorithm
+        <span class="apidocSignatureSpan">(alg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSigningAlgorithm(alg) {
+  if(!this.isSupportedAlg(alg)){
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+  this.signingAlgorithm = alg;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return new Jwt(claims, enforceDefaultFields);
+  }
+
+  this.header = new JwtHeader();
+  this.body = new JwtBody(claims);
+
+  if (enforceDefaultFields !== false) {
+this.<span class="apidocCodeKeywordSpan">setSigningAlgorithm</span>(&#x27;none&#x27;);
+
+if (!this.body.jti) {
+  this.setJti(uuid.v4());
+}
+
+if (!this.body.iat) {
+  this.setIssuedAt(nowEpochSeconds());
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Verifier.prototype.setSigningKey" id="apidoc.module.njwt.Verifier.prototype.setSigningKey">module njwt.Verifier.prototype.setSigningKey</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.setSigningKey.setSigningKey" id="apidoc.element.njwt.Verifier.prototype.setSigningKey.setSigningKey">
+        function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>setSigningKey
+        <span class="apidocSignatureSpan">(keyStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSigningKey(keyStr) {
+  this.signingKey = keyStr;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var args = Array.prototype.slice.call(arguments);
+var cb = typeof args[args.length-1] === &#x27;function&#x27; ? args.pop() : null;
+
+var verifier = new Verifier();
+
+if(args.length===3){
+  verifier.setSigningAlgorithm(args[2]);
+  verifier.<span class="apidocCodeKeywordSpan">setSigningKey</span>(args[1]);
+}
+
+if(args.length===2){
+  verifier.setSigningKey(args[1]);
+}
+
+if(args.length===1){
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Verifier.prototype.verify" id="apidoc.module.njwt.Verifier.prototype.verify">module njwt.Verifier.prototype.verify</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.verify.verify" id="apidoc.element.njwt.Verifier.prototype.verify.verify">
+        function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>verify
+        <span class="apidocSignatureSpan">(jwtString, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function verify(jwtString, cb){
+  var jwt;
+
+  var done = handleError.bind(null,cb);
+
+  try {
+    jwt = new Parser().parse(jwtString);
+  } catch(e) {
+    return done(e);
+  }
+
+  var body = jwt.body;
+  var header = jwt.header;
+  var signature = jwt.signature;
+
+  var cryptoAlgName = algCryptoMap[header.alg];
+  var signingType = algTypeMap[header.alg];
+
+  if (header.alg !== this.signingAlgorithm) {
+    return done(new JwtParseError(properties.errors.SIGNATURE_ALGORITHM_MISMTACH,jwtString,header,body));
+  }
+
+  if (jwt.isExpired()) {
+    return done(new JwtParseError(properties.errors.EXPIRED,jwtString,header,body));
+  }
+
+  if (jwt.isNotBefore()) {
+    return done(new JwtParseError(properties.errors.NOT_ACTIVE,jwtString,header,body));
+  }
+
+  var digstInput = jwt.verificationInput;
+  var verified, digest;
+
+  return this.keyResolver(header.kid, function(err, signingKey) {
+
+    if (err) {
+      return done(new JwtParseError(util.format(properties.errors.KEY_RESOLVER_ERROR, header.kid),jwtString,header,body, err));
+    }
+
+
+    if( cryptoAlgName===&#x27;none&#x27;) {
+      verified = true;
+    } else if(signingType === &#x27;hmac&#x27;) {
+      digest = crypto.createHmac(cryptoAlgName, signingKey)
+        .update(digstInput)
+        .digest(&#x27;base64&#x27;);
+      verified = signature === digest;
+    } else {
+      var unescapedSignature;
+      var signatureType = undefined;
+
+      if (isECDSA(header.alg)) {
+        try {
+          unescapedSignature = ecdsaSigFormatter.joseToDer(signature, header.alg);
+        } catch (err) {
+          return done(new JwtParseError(properties.errors.SIGNATURE_MISMTACH,jwtString,header,body,err));
+        }
+      } else {
+        signatureType = &#x27;base64&#x27;;
+        unescapedSignature = base64urlUnescape(signature);
+      }
+
+      verified = crypto.createVerify(cryptoAlgName)
+        .update(digstInput)
+        .verify(signingKey, unescapedSignature, signatureType);
+    }
+
+    var newJwt = new Jwt(body, false);
+
+    newJwt.toString = function () {
+      return jwtString;
+    };
+
+    newJwt.header = new JwtHeader(header);
+
+    if (!verified) {
+      return done(new JwtParseError(properties.errors.SIGNATURE_MISMTACH,jwtString,header,body));
+    }
+
+    return done(null, newJwt);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* It hasn&#x27;t been modified (e.g. some claims were maliciously added)
+* It hasn&#x27;t expired
+* It is active
+
+To verify a previously issued token, use the `verify` method.  You must give it
+the same signing key that you are using to create tokens:
+````javascript
+nJwt.<span class="apidocCodeKeywordSpan">verify</span>(token,signingKey,function(err,verifiedJwt){
+  if(err){
+    console.log(err); // Token has expired, has been tampered with, etc
+  }else{
+    console.log(verifiedJwt); // Will contain the header and body
+  }
+});
+````
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.Verifier.prototype.withKeyResolver" id="apidoc.module.njwt.Verifier.prototype.withKeyResolver">module njwt.Verifier.prototype.withKeyResolver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.Verifier.prototype.withKeyResolver.withKeyResolver" id="apidoc.element.njwt.Verifier.prototype.withKeyResolver.withKeyResolver">
+        function <span class="apidocSignatureSpan">njwt.Verifier.prototype.</span>withKeyResolver
+        <span class="apidocSignatureSpan">(keyResolver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function withKeyResolver(keyResolver) {
+  this.keyResolver = keyResolver;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+cb(new Error(&#x27;Unknown kid&#x27;));
+}
+
+var tokenA = nJwt.create({}, keyMap.kid_a).setHeader(&#x27;kid&#x27;, &#x27;kid_a&#x27;).compact();
+
+var tokenB = nJwt.create({}, &#x27;foo&#x27;).setHeader(&#x27;kid&#x27;, &#x27;bar&#x27;).compact();
+
+var verifier = nJwt.createVerifier().<span class="apidocCodeKeywordSpan">withKeyResolver</span>(myKeyResolver);
+
+// synchronously
+
+try {
+
+// This will pass and print the result
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.base64urlEncode" id="apidoc.module.njwt.base64urlEncode">module njwt.base64urlEncode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.base64urlEncode.base64urlEncode" id="apidoc.element.njwt.base64urlEncode.base64urlEncode">
+        function <span class="apidocSignatureSpan">njwt.</span>base64urlEncode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function base64urlEncode(str) {
+  return new Buffer(str)
+    .toString(&#x27;base64&#x27;)
+    .replace(/\+/g, &#x27;-&#x27;)
+    .replace(/\//g, &#x27;_&#x27;)
+    .replace(/=/g, &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.base64urlUnescape" id="apidoc.module.njwt.base64urlUnescape">module njwt.base64urlUnescape</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.base64urlUnescape.base64urlUnescape" id="apidoc.element.njwt.base64urlUnescape.base64urlUnescape">
+        function <span class="apidocSignatureSpan">njwt.</span>base64urlUnescape
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function base64urlUnescape(str) {
+  str += new Array(5 - str.length % 4).join(&#x27;=&#x27;);
+  return str.replace(/\-/g, &#x27;+&#x27;).replace(/_/g, &#x27;/&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.create" id="apidoc.module.njwt.create">module njwt.create</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.create.create" id="apidoc.element.njwt.create.create">
+        function <span class="apidocSignatureSpan">njwt.</span>create
+        <span class="apidocSignatureSpan">(claims, secret, alg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (claims, secret, alg){
+  var args = Array.prototype.slice.call(arguments);
+  var jwt;
+  if(args.length &#x3e;= 2){
+    jwt = new Jwt(claims);
+  }else if (args.length===1 &#x26;&#x26; typeof claims === &#x27;string&#x27;){
+    jwt = new Jwt({});
+    secret = claims;
+  }else{
+    jwt = new Jwt(claims);
+  }
+  if(alg!==&#x27;none&#x27; &#x26;&#x26; !secret){
+    throw new Error(properties.errors.SIGNING_KEY_REQUIRED);
+  }else{
+    jwt.setSigningAlgorithm(args.length===3 ? alg : &#x27;HS256&#x27;);
+    jwt.setSigningKey(secret);
+  }
+  jwt.setExpiration((nowEpochSeconds() + (60*60))*1000); // one hour
+  return jwt;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var claims = {
+  iss: &#x22;http://myapp.com/&#x22;,  // The URL of your service
+  sub: &#x22;users/user1234&#x22;,    // The UID of the user in your system
+  scope: &#x22;self, admins&#x22;
+}
+
+var jwt = nJwt.<span class="apidocCodeKeywordSpan">create</span>(claims,signingKey);
+
+````
+
+Once you have created the JWT, you can look at its internal structure by
+logging it to the console.  This is our internal representation of the token,
+this is not what you&#x27;ll send to your end user:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.createVerifier" id="apidoc.module.njwt.createVerifier">module njwt.createVerifier</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.createVerifier.createVerifier" id="apidoc.element.njwt.createVerifier.createVerifier">
+        function <span class="apidocSignatureSpan">njwt.</span>createVerifier
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createVerifier = function (){
+  return new Verifier();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+jwt.setHeader(&#x27;kid&#x27;, &#x27;kid_a&#x27;);
+```
+
+### Using a key resolver
+If your application is using multiple signing keys, nJwt provides a handy little feature that allows you to resolve which signing
+ key should be used to verify a token.
+
+To do this, you first need to manually create a verifier instance, using `nJwt.<span class="apidocCodeKeywordSpan">createVerifier
+</span>()`, and then provide your key resolution function to the `withKeyResolver()` method:
+
+```javascript
+var keyMap = {
+  kid_a: &#x27;&#x3c;secure signing key&#x3e;&#x27;,
+  kid_b: &#x27;&#x3c;secure signing key&#x3e;&#x27;
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.njwt.verify" id="apidoc.module.njwt.verify">module njwt.verify</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.njwt.verify.verify" id="apidoc.element.njwt.verify.verify">
+        function <span class="apidocSignatureSpan">njwt.</span>verify
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">verify = function (){
+
+  var args = Array.prototype.slice.call(arguments);
+  var cb = typeof args[args.length-1] === &#x27;function&#x27; ? args.pop() : null;
+
+  var verifier = new Verifier();
+
+  if(args.length===3){
+    verifier.setSigningAlgorithm(args[2]);
+    verifier.setSigningKey(args[1]);
+  }
+
+  if(args.length===2){
+    verifier.setSigningKey(args[1]);
+  }
+
+  if(args.length===1){
+    verifier.setSigningAlgorithm(&#x27;none&#x27;);
+  }
+
+  return verifier.verify(args[0], cb);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* It hasn&#x27;t been modified (e.g. some claims were maliciously added)
+* It hasn&#x27;t expired
+* It is active
+
+To verify a previously issued token, use the `verify` method.  You must give it
+the same signing key that you are using to create tokens:
+````javascript
+nJwt.<span class="apidocCodeKeywordSpan">verify</span>(token,signingKey,function(err,verifiedJwt){
+  if(err){
+    console.log(err); // Token has expired, has been tampered with, etc
+  }else{
+    console.log(verifiedJwt); // Will contain the header and body
+  }
+});
+````
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
