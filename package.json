@@ -1,6 +1,6 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "api documentation for [njwt (v0.4.0)](https://github.com/jwtk/njwt) [![npm package](https://img.shields.io/npm/v/npmdoc-njwt.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-njwt) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-njwt.svg)](https://travis-ci.org/npmdoc/node-npmdoc-njwt)",
+    "description": "#### basic api documentation for  [njwt (v0.4.0)](https://github.com/jwtk/njwt)  [![npm package](https://img.shields.io/npm/v/npmdoc-njwt.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-njwt) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-njwt.svg)](https://travis-ci.org/npmdoc/node-npmdoc-njwt)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "njwt": "*",
@@ -35,5 +35,5 @@
         "start": "PORT=${PORT:-8080} utility2 start test.js",
         "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
-    "version": "0.0.1"
+    "version": "2017.4.25"
 }

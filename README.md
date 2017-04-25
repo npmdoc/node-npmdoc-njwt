@@ -1,4 +1,7 @@
-# api documentation for  [njwt (v0.4.0)](https://github.com/jwtk/njwt)  [![npm package](https://img.shields.io/npm/v/npmdoc-njwt.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-njwt) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-njwt.svg)](https://travis-ci.org/npmdoc/node-npmdoc-njwt)
+# npmdoc-njwt
+
+#### basic api documentation for  [njwt (v0.4.0)](https://github.com/jwtk/njwt)  [![npm package](https://img.shields.io/npm/v/npmdoc-njwt.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-njwt) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-njwt.svg)](https://travis-ci.org/npmdoc/node-npmdoc-njwt)
+
 #### JWT Library for Node.js
 
 [![NPM](https://nodei.co/npm/njwt.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/njwt)
@@ -70,7 +73,8 @@
         "test-debug": "mocha --timeout=5000 --debug --reporter dot --check-leaks -w ./*.js test/ ",
         "test-watch": "mocha --timeout=5000 --reporter dot --check-leaks -w ./*.js test/ "
     },
-    "version": "0.4.0"
+    "version": "0.4.0",
+    "bin": {}
 }
 ```
 
